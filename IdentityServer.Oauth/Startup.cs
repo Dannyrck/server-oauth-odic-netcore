@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using IdentityServer.Oauth.InMemoryConfigurations;
 using Microsoft.AspNetCore.Builder;
@@ -18,8 +20,11 @@ namespace IdentityServer.Oauth
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            //var signinCertificate = Path.Combine(_env.ContentRootPath, String.Format("Certificates/test.pfx")); //variable que contiene el certificado para las firmas
+            var passwordSignin = "test"; // password con el que se protegio el certificado.pfx
             services.AddIdentityServer()
-                .AddDeveloperSigningCredential()
+                .AddSigningCredential(new X509Certificate2(@"C:\Users\Danny\source\otherRepos\netcoreIdentitySamples\IdentityPlueralSight\IdentityServer.Oauth\Certificates\test.pfx", passwordSignin)) // utilizar para produccion Certificado x509 para firma
+                //.AddDeveloperSigningCredential() // solo para desarrollo
                 .AddTestUsers(InMemoryConfiguration.Users().ToList())
                 .AddInMemoryClients(InMemoryConfiguration.Clents())
                 .AddInMemoryApiResources(InMemoryConfiguration.ApiResources());
