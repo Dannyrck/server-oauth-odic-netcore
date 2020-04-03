@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29920.165
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer.Oauth", "IdentityServer.Oauth\IdentityServer.Oauth.csproj", "{DC49D956-D11C-45B7-8940-C1825FB5D076}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServer.Oauth", "IdentityServer.Oauth\IdentityServer.Oauth.csproj", "{DC49D956-D11C-45B7-8940-C1825FB5D076}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResourceApiServer", "ResourceApiServer\ResourceApiServer.csproj", "{BA5F3E4A-156C-40FD-8BE7-B0F5A0ED00C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ResourceApiServer", "ResourceApiServer\ResourceApiServer.csproj", "{BA5F3E4A-156C-40FD-8BE7-B0F5A0ED00C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClienteMvc", "ClienteMvc\ClienteMvc.csproj", "{6C57F216-F9C9-4A15-AB6B-486E2857EC98}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{BA5F3E4A-156C-40FD-8BE7-B0F5A0ED00C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA5F3E4A-156C-40FD-8BE7-B0F5A0ED00C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA5F3E4A-156C-40FD-8BE7-B0F5A0ED00C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C57F216-F9C9-4A15-AB6B-486E2857EC98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C57F216-F9C9-4A15-AB6B-486E2857EC98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C57F216-F9C9-4A15-AB6B-486E2857EC98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C57F216-F9C9-4A15-AB6B-486E2857EC98}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

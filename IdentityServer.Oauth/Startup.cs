@@ -38,6 +38,7 @@ namespace IdentityServer.Oauth
                 //.AddDeveloperSigningCredential() // solo para desarrollo
                 .AddTestUsers(InMemoryConfiguration.Users().ToList())
                 .AddInMemoryClients(InMemoryConfiguration.Clents())
+                .AddInMemoryIdentityResources(InMemoryConfiguration.IdentityResources())
                 .AddInMemoryApiResources(InMemoryConfiguration.ApiResources());
 
             // agregando soporte para mvc
