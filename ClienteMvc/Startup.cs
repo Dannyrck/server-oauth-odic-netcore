@@ -38,8 +38,13 @@ namespace ClienteMvc
                     options.Authority = "http://localhost:5000";
                     options.SignInScheme = "Cookies";
                     options.RequireHttpsMetadata = false;
-                    options.ClientId = "clientemvc_implicit";
-                    options.ResponseType = "id_token token";
+                    //options.ClientId = "clientemvc_implicit";
+                    options.ClientId = "clientemvc_code";
+                    options.ClientSecret = "clavesecreta";
+                    options.ResponseType = "id_token code";
+                    options.Scope.Add("offline_access");
+                    options.Scope.Add("myapi");
+                    options.GetClaimsFromUserInfoEndpoint = true;
                     options.SaveTokens = true;
 
                 });

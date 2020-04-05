@@ -40,7 +40,8 @@ namespace IdentityServer.Oauth.InMemoryConfigurations
                     AllowedGrantTypes = GrantTypes.ResourceOwnerPasswordAndClientCredentials,
                     AllowedScopes = new []{"myapi"}
                 },
-                // cliente con flujo Implicito (redireccionamiento)
+                // cliente con flujo Implicito 
+                // (redireccionamiento) regresa directamente un token
                 new Client
                 {
                     ClientId="clientemvc_implicit",
@@ -52,6 +53,27 @@ namespace IdentityServer.Oauth.InMemoryConfigurations
                         "myapi",
 
                     },
+                    AllowAccessTokensViaBrowser = true,
+                    RedirectUris = new[]{ "http://localhost:58799/signin-oidc" },
+                    PostLogoutRedirectUris ={ "http://localhost:58799/signout-callback-oidc" }
+                },
+
+                // cliente con flujo code 
+                // ( el servidor de authorizacion regresa un codigo que el
+                // servidor de recursos intercambiara por un token utilizando un secreto)
+                new Client
+                {
+                    ClientId="clientemvc_code",
+                    ClientSecrets= new [] {new Secret("clavesecreta".Sha256())},
+                    AllowedGrantTypes = GrantTypes.Hybrid,
+                    AllowedScopes = new []{
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
+                        IdentityServerConstants.StandardScopes.Email,
+                        "myapi",
+
+                    },
+                    AllowOfflineAccess = true,
                     AllowAccessTokensViaBrowser = true,
                     RedirectUris = new[]{ "http://localhost:58799/signin-oidc" },
                     PostLogoutRedirectUris ={ "http://localhost:58799/signout-callback-oidc" }
